@@ -14,6 +14,11 @@ namespace DynamicEntity.Models
             BasciProperty2 = basciProperty2;
             BasciProperty3 = basciProperty3;
             KeyValues = keyValues;
+
+            foreach (var keyValue in KeyValues)
+            {
+                keyValue.Row = this;
+            }
         }
 
         public string BasciProperty1 { get; set; }
@@ -21,5 +26,6 @@ namespace DynamicEntity.Models
         public string BasciProperty3 { get; set; }
 
         public ICollection<KeyValue> KeyValues { get; set; }
+        public ProjectTable ProjectTable { get; set; }
     }
 }

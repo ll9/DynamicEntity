@@ -16,5 +16,8 @@ namespace DynamicEntity.Models
 
         public string Key { get; set; }
         public object Value { get; set; }
+
+        public KeyValueSchema KeyValueSchema { get; set; }
+        public Row Row { get; set; }
     }
 }

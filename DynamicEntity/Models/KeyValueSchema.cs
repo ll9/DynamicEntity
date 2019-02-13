@@ -13,11 +13,17 @@ namespace DynamicEntity.Models
             Key = key;
             DataType = dataType;
             KeyValues = keyValues;
+
+            foreach (var keyValue in KeyValues)
+            {
+                keyValue.KeyValueSchema = this;
+            }
         }
 
         public string Key { get; set; }
         public string DataType { get; set; }
 
         public ICollection<KeyValue> KeyValues { get; set; }
+        public ProjectTable ProjectTable { get; set; }
     }
 }

@@ -13,6 +13,15 @@ namespace DynamicEntity.Models
             Name = name;
             Rows = rows;
             KeyValueSchemas = keyValueSchemas;
+
+            foreach (var row in Rows)
+            {
+                row.ProjectTable = this;
+            }
+            foreach (var keyValueSchema in KeyValueSchemas)
+            {
+                keyValueSchema.ProjectTable = this;
+            }
         }
 
         public string Name { get; set; }
